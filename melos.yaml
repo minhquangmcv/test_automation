@@ -2,3 +2,7 @@ name: test_automation
 
 packages:
   - app/**
+
+scripts:
+  upgrade_version:
+    run : sh ./scripts/build.sh
