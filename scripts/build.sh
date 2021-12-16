@@ -7,11 +7,20 @@ GIT_CONFIG_PATH="./scripts/config.sh"
 
 echo
 echo "================= CLEAN UP & UPDATE WORKSPACE ================="
+echo
 git checkout -f
 git clean -fd
 git pull
 echo
 echo "----------------- END CLEAN UP & UPDATE WORKSPACE -----------------"
+echo
+
+echo
+echo "================= WRITE CONFIG ================="
+echo
+echo "RONG_VANG_VERSION=\"$RONG_VANG_VERSION\"" >> CONFIG_PATH
+echo
+echo "----------------- END WRITE CONFIG -----------------"
 echo
 
 echo
