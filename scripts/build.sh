@@ -17,7 +17,7 @@ git add ../scripts/config.sh
 git add ../app/rong_vang_dev/pubspec.yaml
 git add ../app/rong_vang_prod/pubspec.yaml
 
-git commit -m 'Update version to $RONG_VANG_VERSION'
+git commit -m "Update version to $RONG_VANG_VERSION"
 
 git push
 
