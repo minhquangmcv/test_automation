@@ -18,7 +18,7 @@ echo
 echo
 echo "================= WRITE CONFIG ================="
 echo
-echo "RONG_VANG_VERSION=\"$RONG_VANG_VERSION\"" >> $CONFIG_PATH
+echo "RONG_VANG_VERSION=\"$RONG_VANG_VERSION\"" > $CONFIG_PATH
 echo
 echo "----------------- END WRITE CONFIG -----------------"
 echo
