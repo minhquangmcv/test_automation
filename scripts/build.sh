@@ -1,6 +1,6 @@
 #!/bin/bash
-CONFIG_PATH="./scripts/add_github_profile.sh"
-GIT_CONFIG_PATH="./scripts/config.sh"
+GIT_CONFIG_PATH="./scripts/add_github_profile.sh"
+CONFIG_PATH="./scripts/config.sh"
 
 . "$GIT_CONFIG_PATH"
 . "$CONFIG_PATH"
