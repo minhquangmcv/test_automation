@@ -5,4 +5,4 @@ packages:
 
 scripts:
   upgrade_version:
-    run :  sh ./scripts/build.sh
+    run : sh ./scripts/build.sh
