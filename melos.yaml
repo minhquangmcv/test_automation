@@ -5,4 +5,4 @@ packages:
 
 scripts:
   upgrade_version:
-    run : sh ./scripts/build.sh
+    run : melos exec --scope="test_automation" "sh ./scripts/build.sh"

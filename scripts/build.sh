@@ -3,6 +3,7 @@ CONFIG_PATH="./scripts/config.sh"
 
 cd ..
 
+. "./scripts/add_github_profile.sh"
 . "$CONFIG_PATH"
 
 echo
