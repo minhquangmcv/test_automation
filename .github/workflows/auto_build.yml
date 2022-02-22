@@ -56,7 +56,7 @@ jobs:
         #flutter build ipa
         flutter build apk
     - name: send telegram message on push
-    - uses: yanzay/notify-telegram@v0.1.0
+      uses: yanzay/notify-telegram@v0.1.0
       if: always()
       with:
         chat: ${{ secrets.TELEGRAM_TO }} # user id or channel name secret
