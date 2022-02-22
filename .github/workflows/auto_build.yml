@@ -51,7 +51,7 @@ jobs:
       run: |
         pwd
         ls
-        cd test_automation/app/rong_vang_dev
+        cd app/rong_vang_dev
         flutter pub get 
         #flutter build ipa
         flutter build apk
