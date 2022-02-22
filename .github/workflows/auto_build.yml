@@ -1,0 +1,105 @@
+# This is a basic workflow to help you get started with Actions
+
+name: auto_build
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - master
+      - develop
+      - auto_upgrade_version
+
+  pull_request:
+    branches:
+      - develop
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    
+    steps:
+    
+   # Check out source code
+    - name: Checkout Source Code
+      uses: actions/checkout@v2
+    
+    # Setup Java 
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+        
+    # Setup Flutter 
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '2.8.1'
+    - name: install Melos
+      run: dart pub global activate melos
+
+    
+
+    # Setup Build dev     
+    - name: Build Dev
+      run: |
+        cd rong_vang/app/rong_vang_dev
+        flutter pub get 
+        #flutter build ipa
+        flutter build apk
+        # flutter build ios --no-codesign
+        # cd build/ios/iphoneos
+        # mkdir Payload
+        # cd Payload
+        # ln -s ../Runner.app
+        # cd ..
+        # zip -r dev.ipa Payload
+
+    # # Setup Build Prod     
+    # - name: Build Prod
+    #   run: |
+    #     cd rong_vang/app/rong_vang_prod
+    #     flutter pub get 
+    #     flutter build apk
+    #     # flutter build ios --no-codesign
+    #     # cd build/ios/iphoneos
+    #     # mkdir Payload
+    #     # cd Payload
+    #     # ln -s ../Runner.app
+    #     # cd ..
+    #     # zip -r prod.ipa Payload
+      
+   
+
+    # # Upload generated apk to the artifacts.
+    # # APK Dev
+    # - name: Release Dev APK
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: dev_release-apk
+    #     path: rong_vang/app/rong_vang_dev/build/app/outputs/apk/release/app-release.apk
+    # # APK Prod
+    # - name: Release Prod APK 
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: prod_release-apk
+    #     path: rong_vang/app/rong_vang_prod/build/app/outputs/apk/release/app-release.apk
+    # # IPA Dev
+    # - name: Release Dev IPA
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: dev_release-ipa
+    #     path: rong_vang/app/rong_vang_dev/build/ios/iphoneos/dev.ipa
+    # # IPA Prod
+    # - name: Release Prod IPA 
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: prod_release-ipa
+    #     path: rong_vang/app/rong_vang_prod/build/ios/iphoneos/prod.ipa
+        
