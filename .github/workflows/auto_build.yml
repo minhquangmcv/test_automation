@@ -26,7 +26,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: lienminhquang/telegram_action@master
+      uses: lienminhquang/telegram_action@v1.2
       with:
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }} # user id or channel name secret
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }} # token secret
