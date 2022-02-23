@@ -24,6 +24,11 @@ jobs:
     
     
     steps:
+    - name: Hello world action step
+      id: hello
+      uses: lienminhquang/telegram_action@v1.1
+      with:
+        who-to-greet: 'Mona the Octocat'
     
    # Check out source code
     - name: Checkout Source Code
@@ -49,8 +54,6 @@ jobs:
     # Setup Build dev     
     - name: Build Dev
       run: |
-        pwd
-        ls
         cd app/rong_vang_dev
         flutter pub get 
         #flutter build ipa
