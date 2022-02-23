@@ -26,9 +26,8 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: lienminhquang/telegram_action@v1.1
+      uses: lienminhquang/telegram_action@master
       with:
-        who-to-greet: 'Mona the Octocat'
         TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }} # user id or channel name secret
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }} # token secret
     
