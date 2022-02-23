@@ -29,6 +29,8 @@ jobs:
       uses: lienminhquang/telegram_action@v1.1
       with:
         who-to-greet: 'Mona the Octocat'
+        TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }} # user id or channel name secret
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }} # token secret
     
    # Check out source code
     - name: Checkout Source Code
